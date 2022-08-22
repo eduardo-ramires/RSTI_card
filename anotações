@@ -1,0 +1,30 @@
+-------CRUD-------
+cadastro-create-form
+listagem-list-table
+aoagar-delet
+alterar-update-form
+detalhes
+
+pagina principal-land page
+cadastro
+login
+tela principal app 
+
+---CRUD carteira---
+carteira list
+carteira creat-form
+carteira update -form
+carteira delet
+carteora detail
+
+------CRUD de lançamento------
+lançamento listlançamento creat
+lançamento creat
+lançamento update
+lançamento delet
+lançamento detail
+
+alt+shift+F identa o html
+
+onclick="javascrip:history.go(-1)" faz voltar a pagina anterior
+

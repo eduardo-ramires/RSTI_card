@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/a76347d30e.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>App lançamento / Listar / RSTI CARD - Aplicativo para gestão de finanças pessoais</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="principal.html">
+                <i class="fa-solid fa-sack-dollar" id="home"></i> RSTI Card</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="principal.html"><i class="fa-solid fa-gauge"></i>
+                        Principal <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-item nav-link active" href="carteira_list.html"><i class="fa-solid fa-wallet"></i>
+                        Carteiras </a>
+                    <a class="nav-item nav-link active" href="lancamento.list.html"><i class="fa-solid fa-dollar"></i> Lançamentos
+                    </a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="#" class="nav-item nav-link active">
+                        <i class="fa-solid fa-user"></i> Usuario
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <section class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-3">
+                                    <h2 class="text-primary">
+                                        <i class="fa-solid fa-dollar"></i>
+                                        Lançamentos
+                                    </h2>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 mt-3 form-group">
+                                    <input type="text" class="form-control" name="busca" placeholder="Busca...">
+                                    </input>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 mt-3 form-group">
+                                    <button type="submit" class="btn btn-outline-primary w-100"><i
+                                            class="fa-solid fa-search"></i> Buscar</button>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 mt-3 form-group">
+                                    <a href="lancamento_form.html" class="btn btn-success w-100"><i class="fa-solid fa-save">
+                                            Cadastrar</i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Modal -->
+                        <div class="modal fade" id="modaldeletar" tabindex="-1" role="dialog"
+                            aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="TituloModalCentralizado">Exluir</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Você tem certeza que deseja apagar a carteira
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-dismiss="modal">Não</button>
+                                        <a href="lancamento.list.html" class="btn btn-danger">Sim</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive"><!--Permite navegar mesmo que a tela seja menor, fazendo um scroll bar-->
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Tipo:</th>
+                                        <th >Data:</th>
+                                        <th>Motivo:</th>
+                                        <th>Carteira:</th>
+                                        <th class="text-right">Valor:</th>
+                                        <th class="text-center">Detalhes</th>
+                                        <th class="text-center">Alterar</th>
+                                        <th class="text-center">Apagar</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-plus text-success"></i></td>
+                                        <td>11/06/2005</td>
+                                        <td>Recebimento salario</td>
+                                        <td>Bradesco</td>
+                                        <td class="text-right">R$ 3.000,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit "></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento.list.html" data-toggle="modal" data-target="#modaldeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-plus text-success"></i></td>
+                                        <td>18/07/2018</td>
+                                        <td>Recebimento de troco</td>
+                                        <td>Carteira</td>
+                                        <td class="text-right">R$ 60,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit "></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento.list.html" data-toggle="modal" data-target="#modaldeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-minus text-danger"></i></td>
+                                        <td>22/09/2022</td>
+                                        <td>Pagamento café</td>
+                                        <td>Carteira</td>
+                                        <td class="text-right">R$ 30,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit "></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento.list.html" data-toggle="modal" data-target="#modaldeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-plus text-success"></i></td>
+                                        <td>14/10/2015</td>
+                                        <td>Recebimento salario</td>
+                                        <td>Nubank</td>
+                                        <td class="text-right">R$ 3.000,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit "></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento.list.html" data-toggle="modal" data-target="#modaldeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-minus text-danger"></i></td>
+                                        <td>19/03/2021</td>
+                                        <td>Pagamento celular</td>
+                                        <td>Nubank</td>
+                                        <td class="text-right">R$ 2.000,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit "></i>
+                                            </a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="lancamento.list.html" data-toggle="modal" data-target="#modaldeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="mt-4 bg-light text-center text-secondary fixed-bottom">
+        <p>Desenvolvido por Ramires - &copy; 2022 - RSTI</p>
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
